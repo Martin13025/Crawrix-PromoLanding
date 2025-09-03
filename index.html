@@ -19,13 +19,11 @@
         box-sizing: border-box;
         font-family: "Fira Code", monospace;
       }
-
       body {
         background: #0e0e10;
         color: #fff;
         overflow-x: hidden;
       }
-
       #particles-js {
         position: fixed;
         top: 0;
@@ -34,8 +32,6 @@
         height: 100%;
         z-index: -2;
       }
-
-      /* NAVBAR */
       .navbar {
         position: fixed;
         top: 0;
@@ -49,31 +45,26 @@
         backdrop-filter: blur(10px);
         z-index: 1000;
       }
-
       .navbar .logo {
         font-family: "Raleway", sans-serif;
         font-size: 28px;
         font-weight: 700;
         color: #ff6b81;
       }
-
       .navbar .nav-links {
         list-style: none;
         display: flex;
         gap: 30px;
       }
-
       .navbar .nav-links a {
         color: #fff;
         text-decoration: none;
         font-weight: 600;
         transition: 0.3s;
       }
-
       .navbar .nav-links a:hover {
         color: #fcb045;
       }
-
       .navbar .btn {
         padding: 10px 20px;
         border: none;
@@ -84,21 +75,10 @@
         font-weight: 600;
         transition: 0.3s;
       }
-
       .navbar .btn:hover {
         transform: scale(1.05) rotateZ(-1deg);
         box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
       }
-
-      /* BURGER */
-      .burger {
-        display: none;
-        font-size: 2rem;
-        cursor: pointer;
-        color: #fff;
-      }
-
-      /* HERO */
       .hero {
         position: relative;
         height: 100vh;
@@ -109,7 +89,6 @@
         text-align: center;
         overflow: hidden;
       }
-
       .hero-bg {
         position: absolute;
         top: 0;
@@ -121,18 +100,21 @@
         animation: gradientMove 20s ease infinite;
         z-index: -1;
       }
-
       @keyframes gradientMove {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
       }
-
       .hero-content {
         position: relative;
         z-index: 2;
       }
-
       .hero-title {
         font-size: 4rem;
         font-family: "Raleway", sans-serif;
@@ -146,13 +128,11 @@
         -webkit-text-stroke: 1.5px #ffffff;
         opacity: 1;
       }
-
       .hero-subtitle {
         font-size: 1.5rem;
         margin: 20px 0;
         color: #fff;
       }
-
       .hero-btn {
         padding: 15px 40px;
         font-size: 16px;
@@ -164,14 +144,14 @@
         font-weight: 600;
         transition: 0.3s;
       }
-
       .hero-btn:hover {
         transform: scale(1.07) rotateZ(-1deg);
         background: linear-gradient(45deg, #fcb045, #ff6b81);
         box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
       }
-
-      
+      section {
+        padding: 100px 50px;
+      }
       .features {
         display: flex;
         flex-wrap: wrap;
@@ -179,43 +159,149 @@
         gap: 40px;
         background: #111;
       }
-
-      
+      .feature {
+        flex: 1 1 300px;
+        padding: 30px;
+        border-radius: 20px;
+        background: linear-gradient(145deg, #222, #333);
+        text-align: center;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        transition: all 0.4s ease;
+      }
+      .feature:hover {
+        transform: translateY(-10px) scale(1.03);
+        background: linear-gradient(145deg, #ff6b81, #fcb045);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+      }
+      .feature img {
+        width: 80px;
+        margin-bottom: 15px;
+      }
+      .feature h3 {
+        font-size: 1.8rem;
+        font-family: "Raleway", sans-serif;
+        margin-bottom: 15px;
+        color: #ff6b81;
+      }
+      .feature p {
+        font-size: 1rem;
+        color: #ddd;
+        line-height: 1.6;
+      }
+      .about {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+        background: #0e0e10;
+        perspective: 1000px;
+      }
+      .about-content {
+        flex: 1;
+        min-width: 300px;
+      }
+      .about-content h2 {
+        font-size: 2.5rem;
+        font-family: "Raleway", sans-serif;
+        margin-bottom: 20px;
+        color: #fcb045;
+      }
+      .about-content p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: #ddd;
+      }
+      .about-image {
+        flex: 1;
+        min-width: 300px;
+        height: 350px;
+        background: url("https://via.placeholder.com/600x350?text=Crawrix+Screenshot")
+          center/cover no-repeat;
+        border-radius: 20px;
+      }
+      .testimonials {
+        background: #111;
+        padding: 100px 50px;
+        text-align: center;
+        perspective: 1000px;
+      }
+      .testimonial {
+        margin: 20px auto;
+        max-width: 600px;
+        padding: 20px;
+        background: linear-gradient(145deg, #222, #333);
+        border-radius: 20px;
+        font-size: 1.1rem;
+        color: #ddd;
+        font-style: italic;
+      }
+      .contact {
+        background: #111;
+        text-align: center;
+        position: relative;
+        z-index: 10;
+      }
+      .contact h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        color: #6a82fb;
+      }
+      .contact p {
+        font-size: 1.2rem;
+        color: #fff;
+        margin-top: 20px;
+        opacity: 1;
+      }
+      .contact p a {
+        color: #fcb045;
+        text-decoration: underline;
+      }
+      .burger {
+        display: none;
+        font-size: 28px;
+        cursor: pointer;
+        color: #fff;
+      }
       @media (max-width: 900px) {
-        .features { flex-direction: column; align-items: center; }
-
-        
-        .nav-links {
+        .navbar .nav-links {
           display: none;
           flex-direction: column;
           position: absolute;
           top: 70px;
           right: 20px;
-          background: rgba(14,14,16,0.9);
-          border-radius: 10px;
+          background: rgba(14,14,16,0.95);
           padding: 20px;
+          border-radius: 10px;
+          gap: 15px;
         }
-
-        .nav-links.active { display: flex; }
-
-        .burger { display: block; }
+        .navbar .nav-links.active {
+          display: flex;
+          animation: fadeIn 0.3s ease forwards;
+        }
+        .burger {
+          display: block;
+        }
+        .features {
+          flex-direction: column;
+          align-items: center;
+        }
       }
-
-      @media (min-width: 901px) {
-        .nav-links { display: flex; }
-        .burger { display: none; }
-      }
-
       @media (max-width: 600px) {
-        .hero-title { font-size: 3rem; }
-        .hero-subtitle { font-size: 1.2rem; }
+        .hero-title {
+          font-size: 3rem;
+        }
+        .hero-subtitle {
+          font-size: 1.2rem;
+        }
+      }
+      @keyframes fadeIn {
+        0% {opacity: 0; transform: translateY(-10px);}
+        100% {opacity: 1; transform: translateY(0);}
       }
     </style>
   </head>
   <body>
     <div id="particles-js"></div>
-
-    
     <nav class="navbar">
       <div class="logo">Crawrix</div>
       <ul class="nav-links">
@@ -232,15 +318,12 @@
       </button>
       <div class="burger">&#9776;</div>
     </nav>
-
-    
     <header class="hero">
       <div class="hero-bg"></div>
       <div class="hero-content">
         <h1 class="hero-title">Crawrix - Look Everything You Need</h1>
         <p class="hero-subtitle">
-          Automate link extraction and SEO analysis. Find links fast, organize
-          data, and save hours of manual work.
+          Automate link extraction and SEO analysis. Find links fast, organize data, and save hours of manual work.
         </p>
         <button
           class="hero-btn"
@@ -250,8 +333,6 @@
         </button>
       </div>
     </header>
-
-    
     <section class="features" id="features">
       <div class="feature">
         <img src="https://cdn-icons-png.flaticon.com/128/833/833314.png" alt="Fast Parsing" />
@@ -269,20 +350,36 @@
         <p>Organize parsed links and keywords automatically in structured formats ready for reports.</p>
       </div>
     </section>
-
-    
-
+    <section class="about" id="about">
+      <div class="about-content">
+        <h2>About Crawrix</h2>
+        <p>Crawrix is a modern link parsing tool designed for marketers, SEO analysts, and developers. Quickly collect URLs, analyze them, and generate actionable data to optimize your web strategies.</p>
+      </div>
+      <div class="about-image"></div>
+    </section>
+    <section class="testimonials" id="testimonials">
+      <div class="testimonial">"Crawrix saved me hours of manual link checking. Absolutely essential for my SEO workflow!" – Alice M.</div>
+      <div class="testimonial">"Fast, reliable, and easy to use. Perfect for marketing teams." – Bob R.</div>
+      <div class="testimonial">"The data organization feature is a lifesaver. I can export structured reports in seconds." – Clara S.</div>
+    </section>
+    <section class="contact" id="contact">
+      <h2>Contact Crawrix Developer</h2>
+      <p>For inquiries, write to: <a href="mailto:danpain800@gmail.com">danpain800@gmail.com</a></p>
+    </section>
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
     <script>
-      
       const burger = document.querySelector('.burger');
       const navLinks = document.querySelector('.nav-links');
-
       burger.addEventListener('click', () => {
         navLinks.classList.toggle('active');
       });
-
-      
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+          if(navLinks.classList.contains('active')) navLinks.classList.remove('active');
+        });
+      });
       particlesJS("particles-js", {
         particles: {
           number: { value: 80, density: { enable: true, value_area: 800 } },
@@ -294,6 +391,21 @@
           move: { enable: true, speed: 3 },
         },
       });
+      gsap.from(".hero-title", { y: 50, scale: 0.9, duration: 1, ease: "power3.out" });
+      gsap.from(".hero-subtitle", { y: 50, scale: 0.95, duration: 1, delay: 0.3, ease: "power3.out" });
+      gsap.from(".hero-btn", { y: 50, scale: 0.95, duration: 1, delay: 0.6, ease: "power3.out" });
+      gsap.utils.toArray(".feature, .about-content, .about-image, .testimonial").forEach(el => {
+        gsap.from(el, {
+          scrollTrigger: { trigger: el, start: "top 85%", toggleActions: "play reverse play reverse" },
+          opacity: 0, y: 50, scale: 0.95, rotationX: 5, rotationY: 5, duration: 1, ease: "power3.out"
+        });
+      });
+      gsap.from("#contact h2, #contact p a", {
+        scrollTrigger: { trigger: "#contact", start: "top 90%", toggleActions: "play none none reverse" },
+        y: 30, duration: 1, ease: "power2.out"
+      });
+      gsap.to(".about", { yPercent: -5, ease: "none", scrollTrigger: { trigger: ".about", start: "top bottom", end: "bottom top", scrub: true } });
+      gsap.to(".testimonials", { yPercent: -3, ease: "none", scrollTrigger: { trigger: ".testimonials", start: "top bottom", end: "bottom top", scrub: true } });
     </script>
   </body>
 </html>
