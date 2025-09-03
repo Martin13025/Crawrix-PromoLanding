@@ -141,9 +141,7 @@
         background-clip: text;
         -webkit-text-fill-color: transparent;
         animation: gradientMove 20s ease infinite;
-        /* Белая обводка */
         -webkit-text-stroke: 1.5px #ffffff;
-        /* Прочие стили */
         opacity: 1;
       }
 
@@ -295,13 +293,40 @@
         color: #fcb045;
         text-decoration: underline;
       }
-
       @media (max-width: 900px) {
-        .features {
+        .nav {
+          display: none;
           flex-direction: column;
-          align-items: center;
+          position: absolute;
+          top: 70px;
+          right: 20px;
         }
+
+      .nav.active {
+        display: flex;
+        }
+
+      .burger {
+        display: block; 
       }
+    }
+
+    @media (min-width: 901px) {
+      .nav {
+        display: flex; 
+      }
+
+      .burger {
+        display: none; 
+      }
+    }
+
+    @media (max-width: 900px) {
+      .features {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
 
       @media (max-width: 600px) {
         .hero-title {
@@ -333,21 +358,36 @@
       </button>
     </nav>
     <header class="hero">
-      <div class="hero-bg"></div>
-      <div class="hero-content">
-        <h1 class="hero-title">Crawrix - Look Everything You Need</h1>
-        <p class="hero-subtitle">
-          Automate link extraction and SEO analysis. Find links fast, organize
-          data, and save hours of manual work.
-        </p>
-        <button
-          class="hero-btn"
-          onclick="window.location.href='https://crawrix.com'"
-        >
-          Start Crawling Now
-        </button>
+  <div class="hero-bg"></div>
+
+  <!-- верхняя панель с логотипом и меню -->
+    <div class="header-bar">
+      <div class="logo">Crawrix</div>
+      <nav class="nav">
+        <a href="#">Home</a>
+        <a href="#">Features</a>
+        <a href="#">Docs</a>
+        <a href="#">Contact</a>
+      </nav>
+      <div class="burger">&#9776;</div>
+    </div>
+
+  <!-- основной контент hero -->
+    <div class="hero-content">
+      <h1 class="hero-title">Crawrix - Look Everything You Need</h1>
+      <p class="hero-subtitle">
+        Automate link extraction and SEO analysis. Find links fast, organize
+        data, and save hours of manual work.
+      </p>
+      <button
+        class="hero-btn"
+        onclick="window.location.href='https://crawrix.com'"
+      >
+        Start Crawling Now
+      </button>
       </div>
     </header>
+
     <section class="features" id="features">
       <div class="feature">
         <img
@@ -508,3 +548,4 @@
     </script>
   </body>
 </html>
+
