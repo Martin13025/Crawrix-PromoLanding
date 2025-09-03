@@ -35,6 +35,7 @@
         z-index: -2;
       }
 
+      /* NAVBAR */
       .navbar {
         position: fixed;
         top: 0;
@@ -89,6 +90,15 @@
         box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
       }
 
+      /* BURGER */
+      .burger {
+        display: none;
+        font-size: 2rem;
+        cursor: pointer;
+        color: #fff;
+      }
+
+      /* HERO */
       .hero {
         position: relative;
         height: 100vh;
@@ -113,17 +123,9 @@
       }
 
       @keyframes gradientMove {
-        0% {
-          background-position: 0% 50%;
-        }
-
-        50% {
-          background-position: 100% 50%;
-        }
-
-        100% {
-          background-position: 0% 50%;
-        }
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
       }
 
       .hero-content {
@@ -169,10 +171,7 @@
         box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
       }
 
-      section {
-        padding: 100px 50px;
-      }
-
+      
       .features {
         display: flex;
         flex-wrap: wrap;
@@ -181,167 +180,42 @@
         background: #111;
       }
 
-      .feature {
-        flex: 1 1 300px;
-        padding: 30px;
-        border-radius: 20px;
-        background: linear-gradient(145deg, #222, #333);
-        text-align: center;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-        transition: all 0.4s ease;
-      }
-
-      .feature:hover {
-        transform: translateY(-10px) scale(1.03);
-        background: linear-gradient(145deg, #ff6b81, #fcb045);
-        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
-      }
-
-      .feature img {
-        width: 80px;
-        margin-bottom: 15px;
-      }
-
-      .feature h3 {
-        font-size: 1.8rem;
-        font-family: "Raleway", sans-serif;
-        margin-bottom: 15px;
-        color: #ff6b81;
-      }
-
-      .feature p {
-        font-size: 1rem;
-        color: #ddd;
-        line-height: 1.6;
-      }
-
-      .about {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-around;
-        background: #0e0e10;
-        perspective: 1000px;
-      }
-
-      .about-content {
-        flex: 1;
-        min-width: 300px;
-      }
-
-      .about-content h2 {
-        font-size: 2.5rem;
-        font-family: "Raleway", sans-serif;
-        margin-bottom: 20px;
-        color: #fcb045;
-      }
-
-      .about-content p {
-        font-size: 1.1rem;
-        line-height: 1.6;
-        color: #ddd;
-      }
-
-      .about-image {
-        flex: 1;
-        min-width: 300px;
-        height: 350px;
-        background: url("https://via.placeholder.com/600x350?text=Crawrix+Screenshot")
-          center/cover no-repeat;
-        border-radius: 20px;
-      }
-
-      .testimonials {
-        background: #111;
-        padding: 100px 50px;
-        text-align: center;
-        perspective: 1000px;
-      }
-
-      .testimonial {
-        margin: 20px auto;
-        max-width: 600px;
-        padding: 20px;
-        background: linear-gradient(145deg, #222, #333);
-        border-radius: 20px;
-        font-size: 1.1rem;
-        color: #ddd;
-        font-style: italic;
-      }
-
-      .contact {
-        background: #111;
-        text-align: center;
-        position: relative;
-        z-index: 10;
-      }
-
-      .contact h2 {
-        font-size: 2.5rem;
-        margin-bottom: 20px;
-        color: #6a82fb;
-      }
-
-      .contact p {
-        font-size: 1.2rem;
-        color: #fff;
-        margin-top: 20px;
-        opacity: 1;
-      }
-
-      .contact p a {
-        color: #fcb045;
-        text-decoration: underline;
-      }
+      
       @media (max-width: 900px) {
-        .nav {
+        .features { flex-direction: column; align-items: center; }
+
+        
+        .nav-links {
           display: none;
           flex-direction: column;
           position: absolute;
           top: 70px;
           right: 20px;
+          background: rgba(14,14,16,0.9);
+          border-radius: 10px;
+          padding: 20px;
         }
 
-      .nav.active {
-        display: flex;
-        }
+        .nav-links.active { display: flex; }
 
-      .burger {
-        display: block; 
-      }
-    }
-
-    @media (min-width: 901px) {
-      .nav {
-        display: flex; 
+        .burger { display: block; }
       }
 
-      .burger {
-        display: none; 
+      @media (min-width: 901px) {
+        .nav-links { display: flex; }
+        .burger { display: none; }
       }
-    }
-
-    @media (max-width: 900px) {
-      .features {
-        flex-direction: column;
-        align-items: center;
-      }
-    }
 
       @media (max-width: 600px) {
-        .hero-title {
-          font-size: 3rem;
-        }
-
-        .hero-subtitle {
-          font-size: 1.2rem;
-        }
+        .hero-title { font-size: 3rem; }
+        .hero-subtitle { font-size: 1.2rem; }
       }
     </style>
   </head>
-
   <body>
     <div id="particles-js"></div>
+
+    
     <nav class="navbar">
       <div class="logo">Crawrix</div>
       <ul class="nav-links">
@@ -356,110 +230,59 @@
       >
         Get Wiki
       </button>
-    </nav>
-    <header class="hero">
-  <div class="hero-bg"></div>
-
-  <!-- верхняя панель с логотипом и меню -->
-    <div class="header-bar">
-      <div class="logo">Crawrix</div>
-      <nav class="nav">
-        <a href="#">Home</a>
-        <a href="#">Features</a>
-        <a href="#">Docs</a>
-        <a href="#">Contact</a>
-      </nav>
       <div class="burger">&#9776;</div>
-    </div>
+    </nav>
 
-  <!-- основной контент hero -->
-    <div class="hero-content">
-      <h1 class="hero-title">Crawrix - Look Everything You Need</h1>
-      <p class="hero-subtitle">
-        Automate link extraction and SEO analysis. Find links fast, organize
-        data, and save hours of manual work.
-      </p>
-      <button
-        class="hero-btn"
-        onclick="window.location.href='https://crawrix.com'"
-      >
-        Start Crawling Now
-      </button>
+    
+    <header class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-content">
+        <h1 class="hero-title">Crawrix - Look Everything You Need</h1>
+        <p class="hero-subtitle">
+          Automate link extraction and SEO analysis. Find links fast, organize
+          data, and save hours of manual work.
+        </p>
+        <button
+          class="hero-btn"
+          onclick="window.location.href='https://crawrix.com'"
+        >
+          Start Crawling Now
+        </button>
       </div>
     </header>
 
+    
     <section class="features" id="features">
       <div class="feature">
-        <img
-          src="https://cdn-icons-png.flaticon.com/128/833/833314.png"
-          alt="Fast Parsing"
-        />
+        <img src="https://cdn-icons-png.flaticon.com/128/833/833314.png" alt="Fast Parsing" />
         <h3>Fast Parsing</h3>
-        <p>
-          Extract links and keywords from multiple websites quickly with
-          Crawrix’s high-speed engine.
-        </p>
+        <p>Extract links and keywords from multiple websites quickly with Crawrix’s high-speed engine.</p>
       </div>
       <div class="feature">
-        <img
-          src="https://cdn-icons-png.flaticon.com/128/3135/3135715.png"
-          alt="SEO Insights"
-        />
+        <img src="https://cdn-icons-png.flaticon.com/128/3135/3135715.png" alt="SEO Insights" />
         <h3>SEO Insights</h3>
-        <p>
-          Analyze extracted links to discover SEO opportunities, backlinks, and
-          content performance.
-        </p>
+        <p>Analyze extracted links to discover SEO opportunities, backlinks, and content performance.</p>
       </div>
       <div class="feature">
-        <img
-          src="https://cdn-icons-png.flaticon.com/128/2921/2921222.png"
-          alt="Data Organization"
-        />
+        <img src="https://cdn-icons-png.flaticon.com/128/2921/2921222.png" alt="Data Organization" />
         <h3>Data Organization</h3>
-        <p>
-          Organize parsed links and keywords automatically in structured formats
-          ready for reports.
-        </p>
+        <p>Organize parsed links and keywords automatically in structured formats ready for reports.</p>
       </div>
     </section>
-    <section class="about" id="about">
-      <div class="about-content">
-        <h2>About Crawrix</h2>
-        <p>
-          Crawrix is a modern link parsing tool designed for marketers, SEO
-          analysts, and developers. Quickly collect URLs, analyze them, and
-          generate actionable data to optimize your web strategies.
-        </p>
-      </div>
-      <div class="about-image"></div>
-    </section>
-    <section class="testimonials" id="testimonials">
-      <div class="testimonial">
-        "Crawrix saved me hours of manual link checking. Absolutely essential
-        for my SEO workflow!" – Alice M.
-      </div>
-      <div class="testimonial">
-        "Fast, reliable, and easy to use. Perfect for marketing teams." – Bob R.
-      </div>
-      <div class="testimonial">
-        "The data organization feature is a lifesaver. I can export structured
-        reports in seconds." – Clara S.
-      </div>
-    </section>
-    <section class="contact" id="contact">
-      <h2>Contact Crawrix Developer</h2>
-      <p>
-        For inquiries, write to:
-        <a href="mailto:danpain800@gmail.com" aria-label="Email Crawrix Team"
-          >danpain800@gmail.com</a
-        >
-      </p>
-    </section>
+
+    
+
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
     <script>
+      
+      const burger = document.querySelector('.burger');
+      const navLinks = document.querySelector('.nav-links');
+
+      burger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+      });
+
+      
       particlesJS("particles-js", {
         particles: {
           number: { value: 80, density: { enable: true, value_area: 800 } },
@@ -467,85 +290,10 @@
           shape: { type: "circle" },
           opacity: { value: 0.4 },
           size: { value: 3 },
-          line_linked: {
-            enable: true,
-            distance: 150,
-            color: "#ffffff",
-            opacity: 0.2,
-            width: 1,
-          },
+          line_linked: { enable: true, distance: 150, color: "#ffffff", opacity: 0.2, width: 1 },
           move: { enable: true, speed: 3 },
-        },
-      });
-      gsap.from(".hero-title", {
-        y: 50,
-        scale: 0.9,
-        duration: 1,
-        ease: "power3.out",
-      });
-      gsap.from(".hero-subtitle", {
-        y: 50,
-        scale: 0.95,
-        duration: 1,
-        delay: 0.3,
-        ease: "power3.out",
-      });
-      gsap.from(".hero-btn", {
-        y: 50,
-        scale: 0.95,
-        duration: 1,
-        delay: 0.6,
-        ease: "power3.out",
-      });
-      gsap.utils
-        .toArray(".feature, .about-content, .about-image, .testimonial")
-        .forEach((el) => {
-          gsap.from(el, {
-            scrollTrigger: {
-              trigger: el,
-              start: "top 85%",
-              toggleActions: "play reverse play reverse",
-            },
-            opacity: 0,
-            y: 50,
-            scale: 0.95,
-            rotationX: 5,
-            rotationY: 5,
-            duration: 1,
-            ease: "power3.out",
-          });
-        });
-      gsap.from("#contact h2, #contact p a", {
-        scrollTrigger: {
-          trigger: "#contact",
-          start: "top 90%",
-          toggleActions: "play none none reverse",
-        },
-        y: 30,
-        duration: 1,
-        ease: "power2.out",
-      });
-      gsap.to(".about", {
-        yPercent: -5,
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".about",
-          start: "top bottom",
-          end: "bottom top",
-          scrub: true,
-        },
-      });
-      gsap.to(".testimonials", {
-        yPercent: -3,
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".testimonials",
-          start: "top bottom",
-          end: "bottom top",
-          scrub: true,
         },
       });
     </script>
   </body>
 </html>
-
